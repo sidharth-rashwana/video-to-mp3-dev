@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+
+  celery:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: celery -A app.server.config.celery_tasks worker --loglevel=info
+    depends_on:
+      - redis
+    volumes:
+      - celery_data:/tmp/celery  # Shared volume for Celery
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+      - celery
+    volumes:
+      - celery_data:/tmp/celery  # Shared volume for FastAPI
+
+volumes:
+  celery_data:  # Named volume for shared data

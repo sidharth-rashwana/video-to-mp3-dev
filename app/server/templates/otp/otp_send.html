@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Created</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 800px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: underline;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+        
+        .copyable {
+            background-color: #f5f5f5;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>OTP Validation</h2>
+        <p>Hello <b>{{ mobile }}</b>,</p>
+        <p>Please use OTP: <span class="copyable" onclick="copyToClipboard('{{ otp }}')">{{ otp }}</span> to verify your account.</p>
+        <p><b>Important : Your One-Time Password (OTP) will remain valid for {{ validity }} minute(s).</b></p>
+        <p>If you have any questions or need assistance, please feel free to contact our support team.</p>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+        }
+    </script>
+</body>
+</html>

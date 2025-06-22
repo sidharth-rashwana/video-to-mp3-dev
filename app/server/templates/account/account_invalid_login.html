@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invalid Login Attempt</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 800px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: underline;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Invalid Login Attempt</h2>
+        <p>Hello <b>{{ mobile }}</b>,</p>
+        <p>We noticed an unsuccessful login attempt on your account. If this was you, you can disregard this email. However, if you suspect unauthorized access, please take the following steps:</p>
+        <ol>
+            <li>Change your password immediately.</li>
+            <li>Contact our support team for further assistance.</li>
+        </ol>
+        <p>If you have any  assistance, please feel free to contact our support team.</p>
+        <p><b>Note: For security reasons, we recommend avoiding clicking on any links provided in suspicious emails.</b></p>
+    </div>
+</body>
+</html>
