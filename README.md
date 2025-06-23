@@ -1,11 +1,12 @@
-**Description**
+### **Description**
 
-This is a video-to-MP3 conversion application.
+This project provides a backend service for converting video files to MP3 format. It enables efficient handling and processing of media content, forming the core of a simple and scalable media conversion tool.
 
-**Tech Stack**
+### **Tech Stack**
 
-Backend : FastAPI, Python, MongoDB, Docker
-
+* **Backend**: FastAPI, Python
+* **Database**: MongoDB
+* **Containerization**: Docker
 
 **Docker Usage**
 
